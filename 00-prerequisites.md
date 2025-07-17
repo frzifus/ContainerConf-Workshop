@@ -8,7 +8,7 @@ Um diesen Workshop erfolgreich durchführen zu können, sollten die Teilnehmer d
 1. Eine aktuelle Version des Befehlszeilentools [kubectl](https://kubernetes.io/docs/tasks/tools/) oder [oc](https://docs.openshift.com/container-platform/4.16/cli_reference/openshift_cli/getting-started-cli.html) sollte installiert sein.
 1. PostgeSQL in container ( quay.io/fedora/postgresql-16 )
 1. Mindestens eines von
-   * OpenJDK 17+ / Maven 3.8+ / Quarkus 3.15 / Java Editor oder IDE
+   * OpenJDK 21+ / Maven 3.9+ / Quarkus 3.24 / Java Editor oder IDE
    * Python 3.8+ / Python Editor oder IDE
 
 # Get the source
