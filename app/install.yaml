@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: quay.io/pilhuhn/replicator-psql
+          image: quay.io/pilhuhn/replicator-psql:multi
           ports:
             - containerPort: 5432
           env:
@@ -68,7 +68,7 @@ spec:
     spec:
       containers:
       - name: py-simple-http
-        image: quay.io/pilhuhn/py-simple-http
+        image: quay.io/pilhuhn/py-simple-http:multi
         ports:
         - containerPort: 8080
 ---
@@ -101,7 +101,7 @@ spec:
     spec:
       containers:
         - name: python-other
-          image: quay.io/pilhuhn/py-simple-http
+          image: quay.io/pilhuhn/py-simple-http:multi
           ports:
             - containerPort: 8000
 ---
@@ -132,7 +132,7 @@ spec:
     spec:
       containers:
         - name: python-pay
-          image: quay.io/pilhuhn/python-pay
+          image: quay.io/pilhuhn/python-pay:multi
           ports:
             - containerPort: 8787
           env:
@@ -218,7 +218,7 @@ spec:
     spec:
       containers:
         - name: kafka-relay
-          image: quay.io/pilhuhn/kafka-relay
+          image: quay.io/pilhuhn/kafka-relay:multi
           env:
             - name: kafka_host
               value: "kafka"

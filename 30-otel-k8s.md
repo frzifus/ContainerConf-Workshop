@@ -67,7 +67,7 @@ service:
 Hier starten wir einen Collector, der über `localhost` erreichbar ist, mit der oben gezeigten Konfiguration:
 
 ```bash
-podman run --rm -it --name otel-collector -p 4317:4317 -p 4318:4318 ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector:0.103.0 --config https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/collector-config.yaml
+podman run --rm -it --name otel-collector -p 4317:4317 -p 4318:4318 ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector:0.139.0 --config https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/collector-config.yaml
 ```
 
 #### Telemetriedaten an den Collector senden
@@ -85,11 +85,11 @@ telemetrygen traces --otlp-insecure --duration 10s --rate 4
 Falls `telemetrygen` nicht installiert ist, kann alternativ auch das Container-Image verwendet werden:
 
 ```bash
-docker run --rm -it --link otel-collector ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v0.103.0 metrics --otlp-endpoint=otel-collector:4317 --otlp-insecure --duration 10s --rate 4
+docker run --rm -it --link otel-collector ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v0.139.0 metrics --otlp-endpoint=otel-collector:4317 --otlp-insecure --duration 10s --rate 4
 # or
-docker run --rm -it --link otel-collector ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v0.103.0 logs --otlp-endpoint=otel-collector:4317 --otlp-insecure --duration 10s --rate 4
+docker run --rm -it --link otel-collector ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v0.139.0 logs --otlp-endpoint=otel-collector:4317 --otlp-insecure --duration 10s --rate 4
 # or
-docker run --rm -it --link otel-collector ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v0.103.0 traces --otlp-endpoint=otel-collector:4317 --otlp-insecure --duration 10s --rate 4
+docker run --rm -it --link otel-collector ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v0.139.0 traces --otlp-endpoint=otel-collector:4317 --otlp-insecure --duration 10s --rate 4
 ```
 
 Erwartete Ausgabe:

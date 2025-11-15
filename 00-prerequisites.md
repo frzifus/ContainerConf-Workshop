@@ -71,8 +71,8 @@ kubectl get pods -n cert-manager -w
 ## Deployment des OpenTelemetry Operators
 
 ```bash
-kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.103.0/opentelemetry-operator.yaml
-kubectl get pods -n opentelemetry-operator-system -w  
+kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.139.0/opentelemetry-operator.yaml
+kubectl get pods -n opentelemetry-operator-system -w
 ```
 
 ## Deployment des Observability-Backends
