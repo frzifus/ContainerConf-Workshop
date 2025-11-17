@@ -67,7 +67,7 @@ service:
 Hier starten wir einen Collector, der über `localhost` erreichbar ist, mit der oben gezeigten Konfiguration:
 
 ```bash
-podman run --rm -it --name otel-collector -p 4317:4317 -p 4318:4318 ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector:0.139.0 --config https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/collector-config.yaml
+podman run --rm -it --name otel-collector -p 4317:4317 -p 4318:4318 ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector:0.139.0 --config https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/collector-config.yaml
 ```
 
 #### Telemetriedaten an den Collector senden
@@ -124,7 +124,7 @@ prometheus-79d4df4bd9-h94dm      1/1     Running   1 (44m ago)   10h
 In `app/install.yaml` finden wir die Demo-Applikation, welche wir auch mit kubectl in einem Namespace unserer Wahl installieren können:
 
 ```bash
-$ kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/app/install.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/app/install.yaml
 $ kubectl get pods
 NAME                              READY   STATUS    RESTARTS      AGE
 postgres-74986b95d7-c7dfz         1/1     Running   2 (51m ago)   8h
@@ -191,7 +191,7 @@ Konfiguration des Span Metric Connectors:
 
 Rollout:
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/backend/02-collector-with-span-metrics.yaml
+kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/backend/02-collector-with-span-metrics.yaml
 ```
 
 In den Collector Logs sollten wir nun sehen, wie die Metriken aus unseren Traces generiert werden.
@@ -308,8 +308,8 @@ spec:
 
 Rollout:
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/backend/03-service-monitor.yaml
-kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/backend/04-collector-ta.yaml
+kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/backend/03-service-monitor.yaml
+kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/backend/04-collector-ta.yaml
 ```
 
 Output (`kubectl logs -n observability-backend otel-ta-collector-0`):
@@ -322,7 +322,7 @@ Output (`kubectl logs -n observability-backend otel-ta-collector-0`):
 ### Logging
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/backend/04-collector-logging.yaml
+kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/backend/04-collector-logging.yaml
 ```
 
 ![otel logging lgtm](images/logs-lgtm.png)

@@ -38,7 +38,7 @@ Um die RED Metriken nicht zu verfälschen, erstellen wir eine zweite Trace Pipel
 
 Rollout:
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/backend/05-collector-tailsampling.yaml
+kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/backend/05-collector-tailsampling.yaml
 ```
 
 ![Tailsampling Jaeger](images/otel-tailsampling-jaeger.png)
@@ -68,7 +68,7 @@ Dazu kann ein weiterer Collector als [Loadbalancer](https://github.com/open-tele
 ```
 
 ```yaml
-kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/backend/06-collector-lb-tailsampling.yaml
+kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/backend/06-collector-lb-tailsampling.yaml
 
 ```
 

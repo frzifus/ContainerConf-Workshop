@@ -14,7 +14,7 @@ Um diesen Workshop erfolgreich durchführen zu können, sollten die Teilnehmer d
 # Get the source
 
 ```bash
-git clone --recurse-submodules https://github.com/frzifus/ContainerConf-Workshop-2024.git
+git clone --recurse-submodules https://github.com/frzifus/ContainerConf-Workshop.git
 ```
 
 # Kubernetes Setup mit Kind
@@ -81,7 +81,7 @@ Die Installation des Observability-Backends ist optional. Ein OTLP-kompatibles B
 Falls keines vorhanden ist, können Prometheus für Metriken und Jaeger für Traces wie folgt installiert werden:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop-2024/main/backend/01-backend.yaml
+kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Workshop/main/backend/01-backend.yaml
 kubectl get pods -n observability-backend -w 
 ```
 
