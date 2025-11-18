@@ -327,6 +327,26 @@ kubectl apply -f https://raw.githubusercontent.com/frzifus/ContainerConf-Worksho
 
 ![otel logging lgtm](images/logs-lgtm.png)
 
+### Vereinfachung
+
+Aktuell arbeitet die Operator-SIG (Special Interest Group) an einer vereinfachten Konfiguration über eine weitere CRD namens `ClusterObservability`.
+
+- https://github.com/open-telemetry/opentelemetry-operator/blob/main/docs/rfcs/managed.md
+- https://github.com/open-telemetry/opentelemetry-operator/pull/4475
+
+```yaml
+apiVersion: opentelemetry.io/v1alpha1
+kind: ClusterObservability
+metadata:
+  name: cluster-observability
+  namespace: observability
+spec:
+  exporter:
+    endpoint: "https://otel-backend.example.com:4318"
+    headers:
+      "Authorization": "Bearer token"
+```
+
 ### Korrelation
 
 ![Data Model 1](images/data-model-1.png)
